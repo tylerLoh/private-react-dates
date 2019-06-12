@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # react-dates <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
 [![Build Status][travis-svg]][travis-url]
@@ -409,3 +410,7 @@ The default interface that `react-dates` ships with is the [CSS interface](https
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/react-dates.svg
 [downloads-url]: http://npm-stat.com/charts.html?package=react-dates
+=======
+# private-react-dates
+private react-dates clone from https://github.com/airbnb/react-dates
+>>>>>>> f31be5e7e2c7f7c3fd4cc18520cc063275919657
