@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # react-dates <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
 [![Build Status][travis-svg]][travis-url]
