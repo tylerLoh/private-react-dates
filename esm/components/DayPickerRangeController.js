@@ -8,9 +8,7 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -471,7 +469,7 @@ function (_ref) {
 
     if (Object.keys(modifiers).length > 0) {
       this.setState({
-        visibleDays: _objectSpread({}, visibleDays, {}, modifiers)
+        visibleDays: _objectSpread({}, visibleDays, modifiers)
       });
     }
 
@@ -699,7 +697,7 @@ function (_ref) {
       this.setState({
         hoverDate: day,
         dateOffset: nextDateOffset,
-        visibleDays: _objectSpread({}, visibleDays, {}, modifiers)
+        visibleDays: _objectSpread({}, visibleDays, modifiers)
       });
     }
   };
@@ -751,7 +749,7 @@ function (_ref) {
 
     this.setState({
       hoverDate: null,
-      visibleDays: _objectSpread({}, visibleDays, {}, modifiers)
+      visibleDays: _objectSpread({}, visibleDays, modifiers)
     });
   };
 
@@ -776,7 +774,7 @@ function (_ref) {
       currentMonth: newCurrentMonth,
       disablePrev: this.shouldDisableMonthNavigation(minDate, newCurrentMonth),
       disableNext: this.shouldDisableMonthNavigation(maxDate, newCurrentMonth),
-      visibleDays: _objectSpread({}, newVisibleDays, {}, this.getModifiers(prevMonthVisibleDays))
+      visibleDays: _objectSpread({}, newVisibleDays, this.getModifiers(prevMonthVisibleDays))
     }, function () {
       onPrevMonthClick(newCurrentMonth.clone());
     });
@@ -803,7 +801,7 @@ function (_ref) {
       currentMonth: newCurrentMonth,
       disablePrev: this.shouldDisableMonthNavigation(minDate, newCurrentMonth),
       disableNext: this.shouldDisableMonthNavigation(maxDate, newCurrentMonth),
-      visibleDays: _objectSpread({}, newVisibleDays, {}, this.getModifiers(nextMonthVisibleDays))
+      visibleDays: _objectSpread({}, newVisibleDays, this.getModifiers(nextMonthVisibleDays))
     }, function () {
       onNextMonthClick(newCurrentMonth.clone());
     });
@@ -846,7 +844,7 @@ function (_ref) {
     var nextMonth = currentMonth.clone().add(numberOfVisibleMonths, 'month');
     var newVisibleDays = getVisibleDays(nextMonth, numberOfMonths, enableOutsideDays, true);
     this.setState({
-      visibleDays: _objectSpread({}, visibleDays, {}, this.getModifiers(newVisibleDays))
+      visibleDays: _objectSpread({}, visibleDays, this.getModifiers(newVisibleDays))
     });
   };
 
